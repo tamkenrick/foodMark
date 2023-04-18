@@ -59,9 +59,9 @@ public class FoodController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteFood(@PathVariable Long id) {
+    public ResponseEntity<String> deleteFood(@PathVariable Long id) {
         foodService.deleteFood(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok("{\"code\":\"200\",\"status\":\"success\"}");
     }
 
 //    @GetMapping("/{id}/nutrition")

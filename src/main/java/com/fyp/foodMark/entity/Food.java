@@ -42,7 +42,7 @@ public class Food {
     @JsonManagedReference
     private List<NutritionLabel> nutritionLabels;
 
-    @Column(name = "image", columnDefinition = "VARCHAR(9999)")
+    @Column(name = "image", columnDefinition = "VARCHAR(65,535)")
     private String image;
 
     @Column(name = "created_at", nullable = false)
