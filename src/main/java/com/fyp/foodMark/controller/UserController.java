@@ -65,4 +65,16 @@ public class UserController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<User> getIdByUser(@RequestBody User userInfo) {
+        User user = userService.getIdByUser(userInfo);
+        if (user.getId()!=null) {
+            log.info("Login success");
+            return ResponseEntity.ok(user);
+        } else {
+            log.error("Login Failed");
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

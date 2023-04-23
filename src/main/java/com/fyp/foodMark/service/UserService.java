@@ -43,4 +43,14 @@ public class UserService {
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
+
+    public User getIdByUser(User user) {
+        String username = user.getUsername();
+        String password = user.getPassword();
+
+        User userInfo = new User();
+        Long userId = userRepository.findIdByUser(username, password);
+        userInfo.setId(userId);
+        return userInfo;
+    }
 }
